@@ -12,7 +12,7 @@ RUN dotnet restore
 COPY . ./
 
 # Publish the application to the out folder
-RUN dotnet publish -c Release -o out --no-restore
+RUN dotnet publish /app/TechTickles.csproj --no-restore -c Release -o /app/out --verbosity detailed
 
 # Use the official .NET 6.0 runtime image to run the application
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
