@@ -1,27 +1,21 @@
-# Use the official .NET 6.0 SDK image
+# Use the .NET SDK image
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+WORKDIR /app
+EXPOSE 80
+
+# Use the SDK image to build the application
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY ["TechTickles/TechTickles.csproj", "TechTickles/"]
+RUN dotnet restore "TechTickles/TechTickles.csproj"
 
-# Set the working directory in the container
+# Copy the rest of the files
+COPY . .
+WORKDIR "/src/TechTickles"
+RUN dotnet publish "TechTickles.csproj" -c Release -o /app/out --verbosity detailed
+
+# Copy the build output to the base image and define the entrypoint
+FROM base AS final
 WORKDIR /app
-
-# Copy the project file and restore dependencies
-COPY *.csproj ./
-RUN dotnet restore
-
-# Copy the rest of the application code
-COPY . ./
-
-# Publish the application to the out folder
-RUN dotnet publish /app/TechTickles.csproj --no-restore -c Release -o /app/out --verbosity detailed
-
-# Use the official .NET 6.0 runtime image to run the application
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the published files from the build stage
 COPY --from=build /app/out .
-
-# Set the entry point to run the application
 ENTRYPOINT ["dotnet", "TechTickles.dll"]
