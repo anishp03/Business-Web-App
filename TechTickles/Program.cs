@@ -19,12 +19,7 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
-app.UseStaticFiles(new StaticFileOptions
-{
-    FileProvider = new PhysicalFileProvider(
-        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
-    RequestPath = "/static"
-});
+app.UseStaticFiles();
 
 app.UseRouting();
 
