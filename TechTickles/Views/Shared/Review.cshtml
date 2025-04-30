@@ -1,0 +1,40 @@
+@model TechTickles.Models.Review
+
+  <body>
+    <div class="container mt-5 text-center" style ="margin-bottom: 100px;">
+      
+      <h4>Leave a Review</h4>
+       
+        <input type="hidden" name="ProductId" value="123" />
+
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <form asp-action="Review" asp-controller="Review">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        @if (ViewBag.Message != null)
+                        {
+                            <div class="form-group" style="color: green; margin: 10px;">@ViewBag.Message</div>
+                        }
+                        <div class="form-group" style="margin: 10px;">
+                            <label asp-for="Stars" class="control-label"></label>
+                            <input asp-for="Stars" class="form-control"/>
+                            <span asp-validation-for="Stars" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" style="margin: 10px;">
+                            <label asp-for="Title" class="control-label"></label>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" style="margin: 10px;">
+                            <label asp-for="Description" class="control-label"></label>
+                            <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" style="margin: 10px;">
+                            <input type="submit" value="Post Review" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+  </body>

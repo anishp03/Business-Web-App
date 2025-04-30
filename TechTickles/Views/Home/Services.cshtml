@@ -1,0 +1,28 @@
+﻿<div class="container">
+    <div class="row">
+        @for (int i = 1; i < Model.Count; i++)
+        {
+            var plan = Model[i];
+        
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">@plan.Name</h5>
+                        <p class="card-text">@plan.Description</p>
+                        <p class="card-text"><strong>Price:</strong> $@plan.Price per year</p>
+                        <ul>
+                            @foreach (var feature in plan.Feature)
+                            {
+                                <li>@feature.Name</li>
+                            }
+                        </ul>
+                    </div>
+                    <form method="post" asp-controller="Services" asp-action="AddToCart" class="p-3">
+                        <input type="hidden" name="planId" value="@plan.PlanId" />
+                        <button type="submit" class="btn btn-primary w-100">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        }
+    </div>
+</div>

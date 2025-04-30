@@ -1,0 +1,217 @@
+<style>
+	/* CUSTOM ACCORDION STARTS HERE */
+	.acc-item:checked ~ .acc-label .zmdi-chevron-down {
+		display: none;
+	}
+
+	.acc-item:checked ~ .acc-label .zmdi-chevron-up {
+		display: inline;
+	}
+
+	#custom-accordion label span {
+		margin-right: 30px;
+		display: block;
+	}
+
+	#custom-accordion ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	#custom-accordion li {
+		margin: 0;
+		padding: 0;
+		position: relative;
+		border-bottom: 1px solid #e4e6e5;
+	}
+
+	#custom-accordion .content {
+		padding: 0 20px;
+		overflow: hidden;
+		border: 1px solid #fff;
+		-webkit-transition: all .5s ease-out;
+		-moz-transition: all .5s ease-out;
+		position: relative;
+		z-index: 2;
+	}
+
+	.acc-style ul li {
+		overflow: hidden;
+		margin: 0 0 1px;
+	}
+
+		.acc-style ul li .content {
+			height: 0px;
+			border-top: 0;
+			transition: all .5s ease-out;
+		}
+
+	.acc-item:checked ~ .content {
+		height: auto;
+	}
+
+	.acc-item {
+		cursor: pointer;
+		position: absolute;
+		opacity: 0;
+		top: 0;
+		left: 0;
+		margin: 0;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+	}
+
+	.zmdi-chevron-up {
+		display: none;
+	}
+
+	#custom-accordion ul li {
+		position: relative;
+	}
+
+	/*Accordion Styles*/
+	.acc-style ul li label {
+		padding: 10px 20px;
+	}
+
+	#custom-accordion {
+		background: #ffffff;
+	}
+
+	.acc-label i {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		color: #0465ac;
+		font-size: 25px;
+	}
+
+	.noborder {
+		border-bottom: 0px !important;
+	}
+
+	#custom-accordion p {
+		color: #333;
+		margin: 0 0 10px;
+		line-height: 20px;
+	}
+
+	#custom-accordion label {
+		position: relative;
+		display: block;
+		font-size: 16px;
+		line-height: 20px;
+		color: #0465ac;
+		font-weight: 600;
+		cursor: pointer;
+	}
+	/* CUSTOM ACCORDION ENDS HERE */
+</style>
+
+
+<!-- FREQUENTLY ASKED QUESTIONS -->
+
+<div style="padding:24px;">
+	<div>
+		<p style="font-size:26px;font-family:Nunito, sans-serif;font-weight:300;margin:0px 0px 8px;">Frequently Asked Questions</p>
+	</div>
+
+	<!-- Custom Accordion - ILT FAQs -->
+
+	<div id="custom-accordion" class="acc-style">
+		<ul>
+			<li>
+				<input id="item-1" class="acc-item" checked="checked" name="item-accordion" type="radio" value="" /><label class="acc-label">Which product should I choose? </label>
+				<div class="content">
+					<p>
+						Each product is geared towards a different desired level of cybersecurity.
+						Our basic plan can be considered for beginners or recreational web browsers. 
+						Our plus plan features higher cybersecurity potential and is mainly considered by more experienced internet users. 
+						Our ultimate plan can be considered the pinnacle of cybersecurity for individual internet users and is packed with the highest levels of protection for your device.
+					</p>
+				</div>
+			</li>
+			<li>
+				<input id="item-2" class="acc-item" name="item-accordion" type="radio" value="" /><label class="acc-label">How do I activate my subscription after purchasing? </label>
+				<div class="content">
+					<p>
+						After purchasing a plan, simply logging into your account on the TechTickles app from any device will automatically activate all included features.
+					</p>
+				</div>
+			</li>
+			<li>
+				<input id="item-3" class="acc-item" name="item-accordion" type="radio" value="" /><label class="acc-label">What information do I need to make an account? </label>
+				<div class="content">
+					<p>
+						All required fields are specified during the account creation process.
+					</p>
+				</div>
+			</li>
+			<li>
+				<input id="item-4" class="acc-item" name="item-accordion" type="radio" value="" /><label class="acc-label">Where can I get support? </label>
+				<div class="content">
+					<p>
+						Our customer support department can be reached either by sending a request to <a href="mailto:TechTicklesSupport@gmail.com">TechTicklesSupport@gmail.com</a> or by calling 123-456-7890 any time during our business hours (7am-7pm Mon-Fri).
+					</p>
+				</div>
+			</li>
+			<li>
+				<input id="item-5" class="acc-item" name="item-accordion" type="radio" value="" /><label class="acc-label">What if I want to cancel my subscription? </label>
+				<div class="content">
+					<p>
+						Subscriptions may be cancelled anytime within the account page.
+					</p>
+				</div>
+			</li>
+			<li>
+				<input id="item-6" class="acc-item" name="item-accordion" type="radio" value="" /><label class="acc-label">I am having issues with my account, where can I get help? </label>
+				<div class="content">
+					<p>
+						Please contact support for any account related issues (<a href="mailto:TechTicklesSupport@gmail.com">TechTicklesSupport@gmail.com</a> or by calling 123-456-7890).
+					</p>
+				</div>
+			</li>
+			<li>
+				<input id="item-7" class="acc-item" name="item-accordion" type="radio" value="" /><label class="acc-label">What is a Anti-Virus? </label>
+				<div class="content">
+					<p>
+						An antivirus program is software designed to detect, prevent, and remove malware, including viruses and other malicious software.
+						It acts as a security layer, protecting computers, networks, and other devices from cyber threats.
+						Antivirus software often scans for known malicious patterns, monitors for suspicious activity, and can quarantine or remove infected files.
+					</p>
+				</div>
+			</li>
+			<li>
+				<input id="item-8" class="acc-item" name="item-accordion" type="radio" value="" /><label class="acc-label">What is a VPN? </label>
+				<div class="content">
+					<p>
+						A VPN, or Virtual Private Network, is a secure connection that encrypts your internet traffic, making it more difficult for others to monitor your online activity.
+						It essentially creates a private tunnel between your device and the internet, routing your data through a VPN server.
+						This helps protect your privacy, especially when using public Wi-Fi, and can also bypass censorship or access geographically restricted content.
+					</p>
+				</div>
+			</li>
+			<li>
+				<input id="item-9" class="acc-item" name="item-accordion" type="radio" value="" /><label class="acc-label">How can I remove this product from my computer? </label>
+				<div class="content">
+					<p>
+						All products can be removed from a device simply by installing the provided TechTickles app.
+					</p>
+				</div>
+			</li>
+			<li>
+				<input id="item-10" class="acc-item" name="item-accordion" type="radio" value="" /><label class="acc-label">How long does my subscription last? </label>
+				<div class="content">
+					<p>
+						Every subscription lasts for a year starting from the initial purchase date.
+					</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<
+

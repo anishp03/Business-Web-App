@@ -1,0 +1,25 @@
+<div>
+    <h1 style="margin-bottom: 20px;">Reviews</h1>
+    <div class="container">
+        @foreach (var review in Model)
+        {
+            <div class="card mb-3 shadow-sm" style="display: flex; flex-direction: row;">
+                <div class="card-body">
+                    <p class="card-title" style="display: flex;">
+                        <strong>@review.Title</strong>
+                    </p>
+                    <p class="card-text">@review.Description</p>
+                    <p class="card-text">
+                        <small class="text-muted"><strong>Rating:</strong> @review.Stars</small>
+                    </p>
+                    <p class="card-text">
+                          <p style="font-style: italic;"> – @review.Customer.FirstName @review.Customer.LastName</p>
+                    </p>
+                </div>
+                <div class="card-title" style="margin: 16px">
+                    <P>Post Date : @review.Date.ToShortDateString()</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

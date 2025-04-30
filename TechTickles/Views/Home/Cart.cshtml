@@ -1,0 +1,85 @@
+
+<div>
+    <div class="container">
+        <h1>Shopping Cart</h1>
+        @if (Model != null)
+        {
+            <div class="container" style="display: flex; flex-direction: column; gap: 10px;">
+                <div>
+                    <strong style="font-size: 15px;">Plan:</strong> @Model.SubscriptionPlan.Name
+                </div>
+                <div>
+                    <strong style="font-size: 15px;">Price:</strong> @Model.SubscriptionPlan.Price.ToString("C") per year
+                </div>
+                <div>
+                    <strong style="font-size: 15px;">Description:</strong> @Model.SubscriptionPlan.Description
+                </div>
+            </div>
+
+            <div style="display: flex; flex-direction: row; align-items: flex-start; margin-top: 20px; gap: 20px;">
+                <form method="post" asp-controller="Cart" asp-action="Checkout">
+                    <button class = "btn btn-primary" type="submit" class="btn btn-success">Proceed to Checkout</button>
+                </form>
+                <div>
+                    <a class="btn btn-danger" asp-controller="Cart" asp-action="RemoveFromCart" asp-route-planId="@Model.SubscriptionPlan.PlanId">Remove</a>
+                </div>
+            </div>
+            
+        }
+        else
+        {
+            <strong style="font-size: 15px">Your cart is empty.</strong>
+        }
+
+        <div id="carouselExample" class="carousel slide" style="margin-top: 50px; width: auto; height: 400;">
+            <div class="carousel-inner text-center">
+                <div class="carousel-item active">
+                    <img src="/Images/Awards.png" class="d-block w-100" style="border-radius: 15px;">
+                    <div style="font-size: 17px; margin-top: 20px; font-weight: bold;">
+                        These are some of the awards we have received over the years from reputable organizations
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+                        <img src="/Images/ThumbsUp.svg" class="d-block w-100;" style="width: 250px; height: auto;">
+                        <div style="font-size: 17px;">
+                             <div style="font-size: 14x; font-weight: bold; margin-top: 10px;">
+                                No More Worries, No More Stress
+                            </div>
+                            <div style="sont-size: 12px; margin-top: 10px;">
+                                TechTickles is one of the best cybesecurity solutions in the industry, and every since I got their service I have never worried about viruses infecting my devices or my information being leaked.
+                            </div>
+                            <div style="font-style: italic; font-size: 18px; margin-top: 10px;">
+                                - John Doe
+                            </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+                        <div style="font-size: 17px;">
+                            <div style="font-size: 14x; font-weight: bold; margin-top: 10px;">
+                                Protection at its Best, Even on the Go
+                            </div>
+                            <div style="sont-size: 12px; margin-top: 10px;">
+                                Even while travling out of the country, TechTickles was able to give me high speed WiFi. I was able to work from anywhere in the world and not worry about my data being stolen.
+                            </div>
+                            <div style="font-style: italic; font-size: 18px; margin-top: 10px;">
+                                - Jane Huang
+                            </div>
+                        </div>
+                        <img src="/Images/map.svg" class="d-block w-100;" style="width: 575px; height: auto;">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" style="size: 50px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" style="size: 50px;">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1)"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>

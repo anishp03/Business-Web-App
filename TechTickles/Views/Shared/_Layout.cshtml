@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TechTickles</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TechTickles.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 py-3 navbar fixed-top bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand fs-3" asp-area="" asp-controller="Home" asp-action="Index" style="text-decoration-thickness: 800;">TechTickles</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Services">Services</a>
+                        </li>
+                        <li class="nav-item"></li>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="AboutUs">About Us</a>
+                        </li>
+                        <li class="nav-item"></li>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="FAQ">FAQ's</a>
+                        </li>
+                        <li class="nav-item"></li>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="News">News</a>
+                        </li>
+                        <li class="nav-item"></li>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="ViewReviews">Our Reviews</a>
+                        </li>
+                        <div class="d-flex ms-auto">
+                            <a class="btn btn-primary me-3" asp-controller="Home" asp-action="Cart" style="margin-left: 5px;">
+                                <i class="fa-solid fa-cart-shopping" style="font-size:  18px;"></i>
+                            </a>
+                            @if (Context.User.Identity.Name != null)
+                            {
+                                <a class="btn btn-primary me-2" asp-controller="Home" asp-action="Account">Account</a>
+                                <a class="btn btn-primary me-2" asp-controller="Account" asp-action="Logout">Logout</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-primary me-2" asp-controller="Account" asp-action="Registration">Register</a>
+                                <a class="btn btn-primary me-2" asp-controller="Account" asp-action="Login">Login</a>
+                            }
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-5 " style="margin-top: 100px;">
+            @RenderBody()
+        </main>
+    </div>
+
+   <footer class="fixed-bottom" style="background-color: white; padding: 10px;">
+        <div class="container">
+            <p>&copy; 2025 - TechTickles - <a asp-controller="Home" asp-action="Review">Write Us A Review</a></p>
+        </div>
+    </footer>   
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+</body>
+</html>
