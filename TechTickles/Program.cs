@@ -16,6 +16,16 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 var app = builder.Build();
 
+// Error handling middleware
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage(); // Detailed errors in dev
+}
+else
+{
+    app.UseExceptionHandler("/Home/Error"); // Custom error page for production
+    app.UseHsts();
+}
 
 app.UseHttpsRedirection();
 
