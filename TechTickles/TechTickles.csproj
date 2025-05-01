@@ -15,7 +15,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.0" />
     <Content Include="wwwroot\**\*.*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
-    <Content Include="wwwroot\Images\**\*.*">
+    <Content Include="wwwroot\Images\**\*.*" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="Views/**/*" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 
