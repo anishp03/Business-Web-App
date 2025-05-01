@@ -5,8 +5,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSession();
 
+var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+{
+    WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")
+});
+
 builder.Services.AddControllersWithViews();
-builder.WebHost.UseWebRoot("wwwroot");
 
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
