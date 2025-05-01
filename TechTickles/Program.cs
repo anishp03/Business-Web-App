@@ -1,14 +1,12 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddSession();
-
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
     WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")
 });
+
+builder.Services.AddSession();
 
 builder.Services.AddControllersWithViews();
 
