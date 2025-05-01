@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSession();
 
 builder.Services.AddControllersWithViews();
+builder.WebHost.UseWebRoot("wwwroot");
+
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 
