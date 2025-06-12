@@ -14,8 +14,13 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4"/>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.0" />
-    <Content Include="wwwroot\Images\**\*.*" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="Views/**/*" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="wwwroot\Images\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  
+    <Content Include="Views\**\*.*">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
